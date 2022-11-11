@@ -2,8 +2,6 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <meta name="viewport"
-          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>生日快乐!</title>     
     <link type="text/css" rel="stylesheet" href="./css/default.css">
     <script type="text/javascript" src="./css/jquery.min.js"></script>
@@ -34,27 +32,25 @@
              <div id="wrap">
                 <div id="text">
               <div id="code">
-            <font color="#FF0000">    
-<span class="say_title"><h1>祝福语<span style='font-size:20px;'>&#128150;</span></h1></span><br><br>
-<span class="say">ninininininininininininiini -xxx</span><br> <br>
-<span class="say">ninininininininininininiini -xxx</span><br><br>
-<span class="say">ninininininininininininiini -xxx</span><br><br>
-
-
-        </font>
+        <span class="say_title"><h1>祝福语<span style='font-size:20px;'>&#128150;</span></h1></span><br><br>
+                <span class="say">生日快乐，眼下就是目标，不必多虑吧，肌肉鸭，冲！----zjs</span><br> <br>
+                <span class="say">生日快乐 Always friend ----lyl</span><br><br>
+                <span class="say">国服弈星嘎嘎上分 ----ydy</span><br><br>
+                <span class="say">雷霆战机 ----ylm</span><br><br>
+                <span class="say">祝鸭天天有&#128169;吃 ----czb</span><br><br>
+                <span class="say">准备请我们去海伦司&#127801; ----fyx</span><br><br>
+                <span class="say">今年实现扣篮梦✔加油 -lyl</span><br><br>
+                <span class="say">ninininininininininininiini -gmj</span><br><br>
+                <span class="say">ninininininininininininiini -zsy</span><br><br>
+                <span class="say">ninininininininininininiini -ccl</span><br><br>
+                <span class="say">ninininininininininininiini -lsh</span><br><br>
+                <span class="say">ninininininininininininiini -ljy</span><br><br>
       </div>
                 </div>
-                <div id="clock-box">
-                    <!-- <span class="STYLE1"></span><font color="#33CC00">距离我喜欢你，</font>
-<span class="STYLE1">已经是……</span> -->
-<span class="STYLE1"></span>
-<font color="#33CC00"></font>
-<span class="STYLE1"></span>
-                  <!-- <div id="clock"></div> -->
+
               </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            
+        </div>
         </div>
     
     <script>
@@ -97,13 +93,13 @@
                 ]] 
             ],
             bloom: {
-                num: 700,
+                num: 800,
                 width: 1080,
                 height: 650,
             },
             footer: {
                 width: 1200,
-                height: 5,
+                height: 10,
                 speed: 10,
             }
         }
@@ -169,7 +165,7 @@
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
 
-            // 会有闪烁不得意这样做, (＞﹏＜)
+            
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
