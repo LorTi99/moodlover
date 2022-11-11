@@ -23,36 +23,52 @@
 <body>
 <span style='font-size:50px;'>&#128035;
     </span>
-<!--
-  <audio autoplay="autopaly">
-      <source src="music/love.mp3" type="audio/mp3" />
+  <audio autoplay="autopaly" id="music">
+      <source src="music/you.mp3" type="audio/mp3" />
   </audio>
-  -->
 <div id="main">
     <div id="wrap">
         <div id="text">
             <div id="code">
-                <span class="say_title"><h1>祝福语<span style='font-size:20px;'>&#128150;</span></h1></span><br><br>
-                <span class="say">生日快乐，眼下就是目标，不必多虑吧，肌肉鸭，冲！----zjs</span><br> <br>
-                <span class="say">生日快乐 Always friend ----lyl</span><br><br>
-                <span class="say">国服弈星嘎嘎上分 ----ydy</span><br><br>
-                <span class="say">雷霆战机 ----ylm</span><br><br>
-                <span class="say">祝鸭天天有&#128169;吃 ----czb</span><br><br>
-                <span class="say">准备请我们去海伦司&#127801; ----fyx</span><br><br>
-                <span class="say">今年实现扣篮梦&#10004;加油 ----lyl</span><br><br>
-                <span class="say">my man，生日快乐 早日暴富，寻得真爱 -gmj</span><br><br>
-                <span class="say">ninininininininininininiini -zsy</span><br><br>
-                <span class="say">祝你生日快乐。不在虚男，早日找到另一半 -ccl</span><br><br>
-                <span class="say">愿君长似少年时，初心不忘乐相知 -lsh</span><br><br>
-                <span class="say">ninininininininininininiini -ljy</span><br><br>
+                <span class="say_title"><h1 style="margin: 5px">祝福语<span style='font-size:25px;'>&#128150;:</span></h1></span><br><br>
+                <span class="say">生日快乐,眼下就是目标,不必多虑,肌肉鸭,冲!——zjs</span><br> <br>
+                <span class="say">生日快乐,Always friend——lyl</span><br><br>
+                <span class="say">国服弈星嘎嘎上分——ydy</span><br><br>
+                <span class="say">雷霆战机——ylm</span><br><br>
+                <span class="say">祝鸭天天有&#128169;吃——czb</span><br><br>
+                <span class="say">准备请我们去海伦司&#127801;——fyx</span><br><br>
+                <span class="say">今年实现扣篮梦&#10004;加油——lyl</span><br><br>
+                <span class="say">my man,生日快乐,早日暴富,寻得真爱——gmj</span><br><br>
+                <span class="say">xxxxxxxxxxxxxxxxxxxxxxxxxxx——zsy</span><br><br>
+                <span class="say">祝你生日快乐,不再虚男,早日找到另一半——ccl</span><br><br>
+                <span class="say">愿君长似少年时,初心不忘乐相知——lsh</span><br><br>
+                <span class="say">生活不如意的时候我们一直在&#10024;!——ljy</span><br><br>
+                <span class="say" style="color: #1d1717;font-size: 1.75em;font-weight: bold">Ending...</span><br><br>
             </div>
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
+
     </div>
 
 </div>
+<div id="pauseMusic">
+    <span style="font-size: 25px;position: absolute;padding: 30px;text-align: center">暂停/播放音乐</span>
+&#128035;
+</div>
 <script>
     (function () {
+        var musiccontroller = $('#pauseMusic');
+        musiccontroller.click(function () {
+            var status = document.getElementById("music");
+            if(status.paused){
+                status.paused = false;
+                status.play();
+            }else {
+                status.paused = true;
+                status.pause();
+            }
+        })
+
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
@@ -106,6 +122,8 @@
         var hold = 1;
 
         canvas.click(function (e) {
+            var music = document.getElementById("music");
+            music.play();
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
