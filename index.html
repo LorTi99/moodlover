@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "htt`://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>生日快乐!</title>     
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>生日快乐!</title>
     <link type="text/css" rel="stylesheet" href="./css/default.css">
     <script type="text/javascript" src="./css/jquery.min.js"></script>
     <script type="text/javascript" src="./css/jscex.min.js"></script>
@@ -13,65 +13,61 @@
     <script type="text/javascript" src="./css/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./css/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./css/love.js" charset="utf-8"></script>
-
     <style type="text/css">
-        <!--
-        .STYLE1 {color: #666666}
-        -->
-        </style>
-
+        .STYLE1 {
+            color: #666666
+        }
+    </style>
 </head>
-    <body>
-    <span style='font-size:50px;'>&#128035;&#128035;&#128035;&#128035;&#128035;</span>
-    <!--
-      <audio autoplay="autopaly">
-          <source src="music/love.mp3" type="audio/mp3" />
-      </audio>
-      -->
-        <div id="main">
-             <div id="wrap">
-                <div id="text">
-              <div id="code">
-        <span class="say_title"><h1>祝福语<span style='font-size:20px;'>&#128150;</span></h1></span><br><br>
+
+<body>
+<span style='font-size:50px;'>&#128035;
+    </span>
+<!--
+  <audio autoplay="autopaly">
+      <source src="music/love.mp3" type="audio/mp3" />
+  </audio>
+  -->
+<div id="main">
+    <div id="wrap">
+        <div id="text">
+            <div id="code">
+                <span class="say_title"><h1>祝福语<span style='font-size:20px;'>&#128150;</span></h1></span><br><br>
                 <span class="say">生日快乐，眼下就是目标，不必多虑吧，肌肉鸭，冲！----zjs</span><br> <br>
                 <span class="say">生日快乐 Always friend ----lyl</span><br><br>
                 <span class="say">国服弈星嘎嘎上分 ----ydy</span><br><br>
                 <span class="say">雷霆战机 ----ylm</span><br><br>
                 <span class="say">祝鸭天天有&#128169;吃 ----czb</span><br><br>
                 <span class="say">准备请我们去海伦司&#127801; ----fyx</span><br><br>
-                <span class="say">今年实现扣篮梦✔加油 -lyl</span><br><br>
+                <span class="say">今年实现扣篮梦&#10004;加油 ----lyl</span><br><br>
                 <span class="say">ninininininininininininiini -gmj</span><br><br>
                 <span class="say">ninininininininininininiini -zsy</span><br><br>
                 <span class="say">ninininininininininininiini -ccl</span><br><br>
                 <span class="say">ninininininininininininiini -lsh</span><br><br>
                 <span class="say">ninininininininininininiini -ljy</span><br><br>
-      </div>
-                </div>
-
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
         </div>
-        </div>
-    
-    <script>
-    </script>
+        <canvas id="canvas" width="1100" height="680"></canvas>
+    </div>
 
-    <script>
-    (function(){
+</div>
+<script>
+    (function () {
         var canvas = $('#canvas');
-    
+
         if (!canvas[0].getContext) {
             $("#error").show();
-            return false;        }
+            return false;
+        }
 
         var width = canvas.width();
-        var height = canvas.height();        
+        var height = canvas.height();
         canvas.attr("width", width);
         canvas.attr("height", height);
         var opts = {
             seed: {
                 x: width / 2 - 20,
-                color: "rgb(70,100,100)",
+                color: "rgb(255,100,100)",
                 scale: 2
             },
             branch: [
@@ -90,10 +86,10 @@
                     [546, 357, 608, 252, 678, 221, 6, 100, [
                         [590, 293, 646, 277, 648, 271, 2, 80]
                     ]]
-                ]] 
+                ]]
             ],
             bloom: {
-                num: 800,
+                num: 1,
                 width: 1080,
                 height: 650,
             },
@@ -109,17 +105,17 @@
         var foot = tree.footer;
         var hold = 1;
 
-        canvas.click(function(e) {
+        canvas.click(function (e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             if (seed.hover(x, y)) {
-                hold = 0; 
+                hold = 0;
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
                 canvas.removeClass('hand');
             }
-        }).mousemove(function(e){
+        }).mousemove(function (e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
@@ -144,14 +140,14 @@
 
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
-              tree.grow();
+                tree.grow();
                 $await(Jscex.Async.sleep(10));
             } while (tree.canGrow());
         }));
 
         var flowAnimate = eval(Jscex.compile("async", function () {
             do {
-              tree.flower(2);
+                tree.flower(2);
                 $await(Jscex.Async.sleep(10));
             } while (tree.canFlower());
         }));
@@ -165,9 +161,9 @@
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
 
-            
+            // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
+            canvas.css("background", "#8393ec");
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
@@ -183,14 +179,14 @@
         }));
 
         var textAnimate = eval(Jscex.compile("async", function () {
-        var together = new Date();
-        together.setFullYear(2009,10,23 );      //时间年月日
-        together.setHours(16);            //小时
-        together.setMinutes(53);          //分钟
-        together.setSeconds(0);         //秒前一位
-        together.setMilliseconds(2);        //秒第二位
+            var together = new Date();
+            together.setFullYear(2001, 11, 13);      //时间年月日
+            together.setHours(11);            //小时
+            together.setMinutes(34);          //分钟
+            together.setSeconds(0);         //秒前一位
+            together.setMilliseconds(2);        //秒第二位
 
-        $("#code").show().typewriter();
+            $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {
                 timeElapse(together);
@@ -211,6 +207,7 @@
 
         runAsync().start();
     })();
-    </script>
+</script>
 
-    </body></html>
+</body>
+</html>
